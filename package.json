@@ -1,0 +1,14 @@
+{
+  "name": "ng2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc --watch -m commonjs -t es5 --emitDecoratorMetadata app.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+  }
+}
