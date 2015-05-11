@@ -3,7 +3,7 @@
   <input #title type="text" placeholder="title" autofocus>
   <input #msg type="text" placeholder="message" (keyup)="doneTyping($event, title, msg);">
   <button (click)="setMsg(title, msg);clear(title, msg)">Add Message</button>
-  <div>
-    iMsg value is: {{ iMsg.title }} : {{  iMsg.body }}
+  <div style="margin-top: 10px">
+    MSG value added: {{ iMsg.title }} : {{  iMsg.body }}
   </div>
 </div>

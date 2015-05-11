@@ -6,9 +6,5 @@
       <li *for="#msg of messages" > {{msg.title}}: {{ msg.body}} </li>
     </ul>
   </div>
-  <content></content>
-  <div>
-    <button (click)="addMsg('somevalue')">Add Fixed Message</button>
-    <compose></compose>
-  </div>
+  <compose></compose>
 </div>
