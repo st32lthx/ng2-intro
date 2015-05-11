@@ -23,6 +23,13 @@ export class Compose {
   }
   // has to provide public api so other components
   // can consume.
+
+  // TODO: next step: create a binding between two components.
+  // when click add button, it will use the service somewhoe
+  // to add the values to the msg store ?
+  // only thing compose does, is that it knows how to read the
+  // values from the input field and provide it for interested
+  // parties to use.
   getMsg(msg) {
     console.log(msg);
     this.iMsg = msg;

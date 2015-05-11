@@ -10,4 +10,7 @@ export class MsgStore {
   getAll () {
     return this.msgs;
   }
+  add(msg) {
+    this.msgs.push(msg);
+  }
 }

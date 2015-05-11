@@ -20,6 +20,10 @@ export class Messenger {
   constructor(msgStore: MsgStore) {
     this.title = "Messenger Manager";
     this.messages = msgStore.getAll();
+    this.store = msgStore;
+  }
+  addMsg(msg: any) {
+    this.store.add({title: msg, body: "fixed body"});
   }
 }
 
