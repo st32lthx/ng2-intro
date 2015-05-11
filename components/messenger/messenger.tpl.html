@@ -2,8 +2,10 @@
   <h2>Messenger</h2>
   {{ title }}
   <div>
-    <h2>Values</h2>
-    {{ messages }}
+    <h2>Messages</h2>
+    <ul>
+      <li *for="#msg of messages" > {{msg.title}}: {{ msg.body}} </li>
+    </ul>
   </div>
   <content></content>
   <div>
