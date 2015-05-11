@@ -12,7 +12,13 @@ import {Messenger} from "components/messenger/messenger";
 
 @View({
   templateUrl: "components/root/root.tpl.html",
-  directives: [ Messenger ] /* Registering messenger with the root. */
+  /* Registering messenger with the root.
+      In return, messenger requires what it needs.
+      At this point, messenger requires compose
+      to do message composing.
+      So far: root -> messenger -> compose
+   */
+  directives: [ Messenger ]
 })
 
 export class Root {
