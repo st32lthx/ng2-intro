@@ -10,5 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "es6-module-loader": "^0.16.6",
+    "systemjs": "^0.16.11",
+    "traceur": "0.0.89"
   }
 }

@@ -1,6 +1,7 @@
 /// <reference path="../../typings/angular2/angular2.d.ts" />
 import {Component, View} from 'angular2/angular2';
 
+
 /*
   The root component. The other components
   are the subtree of the root.
@@ -31,8 +32,9 @@ export class Compose {
   // parties to use.
 
   setMsg(title, body) {
-    this.iMsg = {title: title.value, body: body.value };
+    this.iMsg = { title: title.value, body: body.value };
     console.log(this.iMsg);
+    // fire an event so we can listen on from outside.
   }
   getMsg(title, body) {
     return this.iMsg;
