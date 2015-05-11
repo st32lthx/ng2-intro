@@ -32,11 +32,10 @@ export class Compose {
   // parties to use.
 
   setMsg(title, body) {
-    this.iMsg = {title: title, body: body };
+    this.iMsg = {title: title.value, body: body.value };
+    console.log(this.iMsg);
   }
   getMsg(title, body) {
-    this.setMsg(title.value, body.value);
-    console.log(this.iMsg);
     return this.iMsg;
   }
   clear(title, msg) {
@@ -45,14 +44,12 @@ export class Compose {
   }
 
   doneTyping($event, title, msg) {
-    if($event.which === 13) {
-      this.setMsg(title.value, msg.value);
-      console.log(this.iMsg);
-      title.value = "";
-      msg.value = "";
+    let enter = $event.which === 13;
+    if(enter) {
+      this.setMsg(title, msg);
+      this.clear(title, msg);
     }
   }
-
 }
 
 
