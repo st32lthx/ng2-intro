@@ -1,3 +1,5 @@
 node_modules
 main.js
-app.js
+components/*.js
+components/**/*.js
+
