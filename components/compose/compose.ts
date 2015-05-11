@@ -1,13 +1,15 @@
 /// <reference path="../../typings/angular2/angular2.d.ts" />
 import {Component, View} from 'angular2/angular2';
-
+import {Parent} from 'angular2/annotations';
+import {Messenger} from "components/Messenger/Messenger";
 
 /*
   The root component. The other components
   are the subtree of the root.
 */
 @Component({
-  selector: 'compose'
+  selector: 'compose',
+  injectables: [ Messenger ]
 })
 
 @View({
@@ -17,28 +19,23 @@ import {Component, View} from 'angular2/angular2';
 export class Compose {
   title: string;
   iMsg: any;
-  constructor() {
+  messenger: Messenger;
+  constructor(@Parent messenger: Messenger) {
     this.title = "Composer";
     this.iMsg = {};
+    this.messenger = messenger;
   }
-  // has to provide public api so other components
-  // can consume.
-
-  // TODO: next step: create a binding between two components.
-  // when click add button, it will use the service somewhoe
-  // to add the values to the msg store ?
-  // only thing compose does, is that it knows how to read the
-  // values from the input field and provide it for interested
-  // parties to use.
 
   setMsg(title, body) {
     this.iMsg = { title: title.value, body: body.value };
     console.log(this.iMsg);
-    // fire an event so we can listen on from outside.
+    this.messenger.addMsg(title.value, body.value);
   }
+
   getMsg(title, body) {
     return this.iMsg;
   }
+
   clear(title, msg) {
     title.value = "";
     msg.value = "";
@@ -52,5 +49,3 @@ export class Compose {
     }
   }
 }
-
-
