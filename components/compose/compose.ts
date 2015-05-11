@@ -19,7 +19,7 @@ export class Compose {
   iMsg: string;
   constructor() {
     this.title = "Composer";
-    this.iMsg = "";
+    this.iMsg = {};
   }
   // has to provide public api so other components
   // can consume.
@@ -30,18 +30,29 @@ export class Compose {
   // only thing compose does, is that it knows how to read the
   // values from the input field and provide it for interested
   // parties to use.
-  getMsg(msg) {
-    console.log(msg);
-    this.iMsg = msg;
-    return msg;
+
+  setMsg(title, body) {
+    this.iMsg = {title: title, body: body };
   }
-  doneTyping($event) {
+  getMsg(title, body) {
+    this.setMsg(title.value, body.value);
+    console.log(this.iMsg);
+    return this.iMsg;
+  }
+  clear(title, msg) {
+    title.value = "";
+    msg.value = "";
+  }
+
+  doneTyping($event, title, msg) {
     if($event.which === 13) {
-      console.log($event.target.value);
-      this.iMsg = $event.target.value;
-      $event.target.value = null;
+      this.setMsg(title.value, msg.value);
+      console.log(this.iMsg);
+      title.value = "";
+      msg.value = "";
     }
   }
+
 }
 
 

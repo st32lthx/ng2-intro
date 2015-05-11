@@ -22,7 +22,16 @@ export class Messenger {
     this.messages = msgStore.getAll();
     this.store = msgStore;
   }
-  addMsg(msg: any) {
+  // TODO: this exists here. It uses the store
+  // to add msgs. Now, we need to be able to use
+  // this when somehow. It is important to decide
+  // on the responsibilites of components. Does
+  // messenger handle the actual message creating?
+  // or does the composer handle the data formatting, reading
+  // etc? and simply compose provides a method called getInput
+  // and then we can call that from here and get the value
+  // and then just push it to our store?
+  addMsg(msg: string) {
     this.store.add({title: msg, body: "fixed body"});
   }
 }
