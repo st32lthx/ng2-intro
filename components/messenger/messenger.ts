@@ -1,5 +1,6 @@
 /// <reference path="../../typings/angular2/angular2.d.ts" />
 import {Component, View} from 'angular2/angular2';
+import {Compose} from "components/compose/compose"
 
 
 @Component({
@@ -7,7 +8,8 @@ import {Component, View} from 'angular2/angular2';
 })
 
 @View({
-  templateUrl: "components/messenger/messenger.tpl.html"
+  templateUrl: "components/messenger/messenger.tpl.html",
+  directives: [ Compose ]
 })
 
 export class Messenger {
