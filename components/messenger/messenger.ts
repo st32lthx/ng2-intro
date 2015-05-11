@@ -17,6 +17,7 @@ import {MsgStore} from "components/messenger/MsgStore";
 export class Messenger {
   title: string;
   messages: any[];
+  store: MsgStore;
   constructor(msgStore: MsgStore) {
     this.title = "Messenger Manager";
     this.messages = msgStore.getAll();
@@ -31,9 +32,13 @@ export class Messenger {
   // etc? and simply compose provides a method called getInput
   // and then we can call that from here and get the value
   // and then just push it to our store?
-  addMsg(msg: string) {
-    this.store.add({title: msg, body: "fixed body"});
+  addMsg(title: string, body: string) {
+    this.store.add({title: title, body: body});
   }
+  // we have access to compose. All we have to do
+  // is to listen for the setMsg event. once that
+  // is fired, we grab the instance variable,
+  // and we should be good ?
 }
 
 
