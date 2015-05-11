@@ -6,20 +6,14 @@ import {Component, View, bootstrap} from 'angular2/angular2';
 })
 
 @View({
-  template: `
-  <div>
-    <h1>
-      {{ title }}
-    </h1>
-
-  </div>`
+  templateUrl: "app.tpl.html"
 })
 
-class Root {
+export class Root {
   title: string;
   constructor() {
     this.title = "Introduction to Angular2";
   }
 }
 
-bootstrap(Root);
+
