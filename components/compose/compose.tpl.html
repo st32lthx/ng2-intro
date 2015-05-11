@@ -1,8 +1,9 @@
 <div>
   <h2>{{ title }}</h2>
-  <input #msg type="text" placeholder="message" (keyup)="doneTyping($event)" autofocus>
-  <button (click)=getMsg(msg.value)>Add Message</button>
+  <input #title type="text" placeholder="title" autofocus>
+  <input #msg type="text" placeholder="message" (keyup)="doneTyping($event, title, msg)">
+  <button (click)="getMsg(title, msg);clear(title, msg)">Add Message</button>
   <div>
-    iMsg value is: {{ iMsg }}
+    iMsg value is: {{ iMsg.title }} : {{  iMsg.body }}
   </div>
 </div>
