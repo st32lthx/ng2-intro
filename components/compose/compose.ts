@@ -1,7 +1,6 @@
 /// <reference path="../../typings/angular2/angular2.d.ts" />
 import {Component, View} from 'angular2/angular2';
 
-
 /*
   The root component. The other components
   are the subtree of the root.
@@ -16,7 +15,7 @@ import {Component, View} from 'angular2/angular2';
 
 export class Compose {
   title: string;
-  iMsg: string;
+  iMsg: any;
   constructor() {
     this.title = "Composer";
     this.iMsg = {};
