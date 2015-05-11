@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc --watch -m commonjs -t es5 --emitDecoratorMetadata app.ts"
+    "start": "tsc --watch -m commonjs -t es5 --emitDecoratorMetadata main.ts"
   },
   "author": "",
   "license": "ISC",
