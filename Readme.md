@@ -10,7 +10,7 @@ Next, install some global dependencies with npm:
 	
 NOTE: use `sudo` if you have to, but if you run the following, you won't ever need to use `sudo` to use npm:
 
-	sudo chown -R `whoami` ~/.npm && sudo chown -R `whoami` /usr/local/lib/node_modules
+	sudo chown -R `whoami` ~/.npm && sudo chown -R `whoami` /usr/local/
 
 then install the local dependencies:
 
